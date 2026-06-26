@@ -37,32 +37,44 @@ This is the opposite of a "looks correct to me" review. It pairs naturally with 
 - Never deletes or weakens existing tests to get green.
 - Prefers one test that reproduces the bug over ten that decorate the happy path.
 
+## Prerequisites
+
+Claude Code with `/plugin` support (v2.x+) and a shell if you use the manual fallback.
+
 ## Install
+
+### Option 1 — Claude Code plugin marketplace (recommended)
+
+```bash
+/plugin marketplace add Zavelinski/claude-code-skills
+/plugin install adversarial-verify@claude-code-skills
+```
+
+Registered hooks (if any) install through the Claude Code consent UI, with no manual edit to `~/.claude/settings.json`.
+
+### Option 2 — Manual fallback (run it yourself)
+
+> **Security note.** This script mutates `~/.claude/settings.json` directly. Claude Code auto-mode blocks it because a third-party `UserPromptSubmit` hook that injects text into every prompt is a known risk vector. The script is benign and local-only (no network), but you must review and run it yourself. Prefer Option 1.
 
 ```bash
 git clone https://github.com/Zavelinski/claude-code-adversarial-verify.git
-cd adversarial-verify
+cd claude-code-adversarial-verify
+bash install.sh        # macOS / Linux
+.\install.ps1          # Windows (PowerShell)
 ```
-
-**macOS / Linux**
-```bash
-bash install.sh
-```
-
-**Windows (PowerShell)**
-```powershell
-.\install.ps1
-```
-
-Skill-only install (no hooks, no `settings.json` changes). Restart Claude Code, then ask to **verify this change** (or `/adversarial-verify`).
 
 ## Uninstall
 
 ```bash
-bash uninstall.sh      # macOS / Linux
+/plugin uninstall adversarial-verify@claude-code-skills    # Option 1
+bash uninstall.sh                                # Option 2 (or uninstall.ps1 on Windows)
 ```
-```powershell
-.\uninstall.ps1        # Windows
+
+## Update
+
+```bash
+/plugin marketplace update claude-code-skills    # Option 1
+# Option 2: pull the latest commit and re-run the manual fallback.
 ```
 
 ## License
@@ -70,12 +82,5 @@ bash uninstall.sh      # macOS / Linux
 MIT. See [LICENSE](LICENSE). Original work.
 
 ---
-
-## Install as a Claude Code plugin
-
-```bash
-/plugin marketplace add Zavelinski/claude-code-skills
-/plugin install adversarial-verify@claude-code-skills
-```
 
 Part of the **[claude-code-skills](https://github.com/Zavelinski/claude-code-skills)** collection: a suite of focused, original Claude Code skills.
