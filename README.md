@@ -1,8 +1,8 @@
 # adversarial-verify for Claude Code
 
-[![License: MIT](https://img.shields.io/github/license/Zavelinski/adversarial-verify)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/Zavelinski/adversarial-verify?style=flat)](https://github.com/Zavelinski/adversarial-verify/stargazers)
-[![Last commit](https://img.shields.io/github/last-commit/Zavelinski/adversarial-verify)](https://github.com/Zavelinski/adversarial-verify/commits)
+[![License: MIT](https://img.shields.io/github/license/Zavelinski/claude-code-adversarial-verify)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/Zavelinski/claude-code-adversarial-verify?style=flat)](https://github.com/Zavelinski/claude-code-adversarial-verify/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/Zavelinski/claude-code-adversarial-verify)](https://github.com/Zavelinski/claude-code-adversarial-verify/commits)
 [![Claude Code skill](https://img.shields.io/badge/Claude%20Code-skill-8A2BE2)](https://claude.com/claude-code)
 
 A [Claude Code](https://claude.com/claude-code) skill that **proves a code change works by trying to break it**. Given a change, it re-derives what the change is supposed to do, writes targeted tests that try to *falsify* that claim, runs them, and returns a binary **PASS / FAIL / INCONCLUSIVE** verdict backed by real executed output — never prose alone.
@@ -40,7 +40,7 @@ This is the opposite of a "looks correct to me" review. It pairs naturally with 
 ## Install
 
 ```bash
-git clone https://github.com/Zavelinski/adversarial-verify.git
+git clone https://github.com/Zavelinski/claude-code-adversarial-verify.git
 cd adversarial-verify
 ```
 
@@ -68,3 +68,14 @@ bash uninstall.sh      # macOS / Linux
 ## License
 
 MIT. See [LICENSE](LICENSE). Original work.
+
+---
+
+## Install as a Claude Code plugin
+
+```bash
+/plugin marketplace add Zavelinski/claude-code-skills
+/plugin install adversarial-verify@claude-code-skills
+```
+
+Part of the **[claude-code-skills](https://github.com/Zavelinski/claude-code-skills)** collection: a suite of focused, original Claude Code skills.
