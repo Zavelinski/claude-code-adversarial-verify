@@ -1,10 +1,17 @@
 {
   "name": "adversarial-verify",
   "description": "Proves a code change works by trying to break it: re-derives the contract, writes and runs falsification tests, returns a binary PASS/FAIL/INCONCLUSIVE verdict.",
-  "version": "1.0.0",
-  "author": { "name": "Zavelinski" },
+  "version": "1.0.1",
+  "author": {
+    "name": "Zavelinski"
+  },
   "homepage": "https://github.com/Zavelinski/claude-code-adversarial-verify",
   "repository": "https://github.com/Zavelinski/claude-code-adversarial-verify",
   "license": "MIT",
-  "keywords": ["testing","verification","tdd","qa"]
+  "keywords": [
+    "testing",
+    "verification",
+    "tdd",
+    "qa"
+  ]
 }
